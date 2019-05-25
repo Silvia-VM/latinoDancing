@@ -6,6 +6,8 @@ const scrape = async () => {
 
   const $ = cheerio.load(response.data);
 
+  console.log(response.data);
+
   let titleSoirees_tab = [];
   let date_tab = [];
   let lieu_tab = [];
@@ -88,7 +90,7 @@ const scrape = async () => {
   // console.log(liens_tab);
   // console.log(desc_tab);
   // console.log(nomDanses_tab);
-  console.log(horairePrix_tab);
+  // console.log(horairePrix_tab);
 };
 
 scrape();
