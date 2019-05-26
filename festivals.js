@@ -80,8 +80,8 @@ const scrape = async () => {
   // console.log(titleFestival_tab);
   // console.log(mois_tab);
   // console.log(date_tab);
-  // console.log(localisation_tab);
-  console.log(liens_tab);
+  console.log(localisation_tab);
+  // console.log(liens_tab);
 
   // console.log(desc_tab);
   //   console.log(nomDanses_tab);
