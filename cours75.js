@@ -6,8 +6,9 @@ const scrape = async () => {
 
   const $ = cheerio.load(response.data);
 
-  let cours_title = [];
-  let telephone_tab = [];
+  let data = {};
+  let coursTitle_tab = [];
+  let telephone_site_tab = [];
 
   const titleEcole = $("#contenu .conteneur12");
   const numero1 = $("#contenu .conteneur12 p");
@@ -16,20 +17,21 @@ const scrape = async () => {
     const orgs = $(el)
       .children("h2")
       .text();
-    cours_title.push(orgs);
+    coursTitle_tab.push(orgs);
   });
-  console.log(cours_title);
 
   numero1.each((i, el) => {
     var elements = $(el);
     elements.each(function(item) {
-      telephone_tab.push(
+      telephone_site_tab.push(
         $(this)
           .find("a")
           .attr("href")
       );
     });
-    console.log(telephone_tab);
+    data.coursTitle_tab = coursTitle_tab;
+    data.telephone_site_tab = telephone_site_tab;
+    console.log(data);
   });
 };
 

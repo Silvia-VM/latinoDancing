@@ -5,7 +5,7 @@ const scrape = async () => {
   const response = await axios.get("https://salsa.faurax.fr/festival.php");
 
   const $ = cheerio.load(response.data);
-
+  let data = {};
   let titleFestival_tab = [];
   let mois_tab = [];
   let date_tab = [];
@@ -59,13 +59,15 @@ const scrape = async () => {
     });
   });
 
-  // console.log(titleFestival_tab);
-  // console.log(mois_tab);
-  // console.log(date_tab);
-  // console.log(localisation_tab);
-  // console.log(lieu_tab);
-  // console.log(site_tab);
-  // console.log(liens_tab);
+  data.titleFestival_tab = titleFestival_tab;
+  data.mois_tab = mois_tab;
+  data.date_tab = date_tab;
+  data.localisation_tab = localisation_tab;
+  data.lieu_tab = lieu_tab;
+  data.site_tab = site_tab;
+  data.liens_tab = liens_tab;
+
+  console.log(data);
 };
 
 scrape();

@@ -8,6 +8,7 @@ const scrape = async () => {
 
   console.log(response.data);
 
+  let data = {};
   let titleSoirees_tab = [];
   let date_tab = [];
   let lieu_tab = [];
@@ -83,14 +84,16 @@ const scrape = async () => {
     const horaires = $(el).text();
     horairePrix_tab.push(horaires.split("  ")[1]);
   });
-  // console.log(titleSoirees_tab);
-  // console.log(lieu_tab);
-  // console.log(date_tab);
-  //   console.log(localisation_tab);
-  // console.log(liens_tab);
-  // console.log(desc_tab);
-  // console.log(nomDanses_tab);
-  // console.log(horairePrix_tab);
+  data.titleSoirees_tab = titleSoirees_tab;
+  data.lieu_tab = lieu_tab;
+  data.date_tab = date_tab;
+  data.localisation_tab = localisation_tab;
+  data.liens_tab = liens_tab;
+  data.desc_tab = desc_tab;
+  data.nomDanses_tab = nomDanses_tab;
+  data.horairePrix_tab = horairePrix_tab;
+
+  console.log(data);
 };
 
 scrape();
